@@ -7,15 +7,16 @@
 
 import SwiftUI
 
+enum Emoji: String {
+    case 🤖, 😄, 🚀, 💻
+}
+
 struct ContentView: View {
+    let emojiSelection: Emoji = .🚀
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        Text(emojiSelection.rawValue)
     }
 }
 
