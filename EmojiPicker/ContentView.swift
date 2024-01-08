@@ -17,6 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         Text(emojiSelection.rawValue)
+            .font(.system(size: 150))
     }
 }
 
