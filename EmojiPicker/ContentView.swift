@@ -16,18 +16,21 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack {
-            Text(emojiSelection.rawValue)
-                .font(.system(size: 150))
-            
-            Picker("Select Emoji", selection: $emojiSelection) {
-                ForEach(Emoji.allCases, id: \.self) { emoji in
-                    Text(emoji.rawValue)
+        NavigationView {
+            VStack {
+                Text(emojiSelection.rawValue)
+                    .font(.system(size: 150))
+                
+                Picker("Select Emoji", selection: $emojiSelection) {
+                    ForEach(Emoji.allCases, id: \.self) { emoji in
+                        Text(emoji.rawValue)
+                    }
                 }
+                .pickerStyle(.segmented)
             }
-            .pickerStyle(.segmented)
+            .padding()
+            .navigationTitle("Emoji Picker!")
         }
-        .padding()
     }
 }
 
